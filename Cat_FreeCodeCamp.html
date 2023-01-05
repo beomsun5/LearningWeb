@@ -1,0 +1,184 @@
+<!--Necessary Declaration-->
+<!DOCTYPE html>
+
+<html lang="en"> <!--Specifying the language-->
+  <!--Header-->
+  <head>
+    <meta charset="UTF-8">
+    <!--
+      title : Determines what browsers show in the title bar or tab for the page
+    -->
+    <title>CatPhotoApp</title>
+  </head>
+  <!--Body-->
+  <body>
+    <!--Main Contents is written here-->
+    <main>
+      <!--
+        [Title format font tag]
+        h1, h2, h3, h4
+        Big ----- Small
+      -->
+      <h1>CatPhotoApp</h1>
+      <!--Dividing Contents is available with section tag-->
+      <!--1st section-->
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO : Add link to cat photos -->
+        <!--
+          a : Applying hyperlink to the given element
+          attribute 'href' : URL
+          attribute target="_blank" : Open the new tap when directed to the given hyperlink
+        -->
+        <p>See more <a target="_blank" href="https://freecatphoto.com">cat photos</a> in our gallery.</p>
+        <!--
+          img : Image Representation (No closing tag)
+          attribute 'src' : image file (jpg, jpeg, png etc.)
+          attribute 'alt' : used for screen readers to improve accessibility
+                            and is displayed if the image fails to load
+        -->
+        <a href="https://freecatphotoapp.com">
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+          alt="A cute orange cat lying on its back.">
+        </a>
+      </section>
+      <!--2nd section-->
+      <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        <!--
+          ul : Unorderred list
+          li : items
+          -> Specific characters appear
+             whenever items are added with indentation
+        -->
+        <ul>
+          <li>cat nip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+        <!--
+          figure : self-contained content and will allow you
+                   to associate an image with a caption
+          figcaption :  Add explanation of the elements
+                        included in the 'figure' tag
+          em : tilted font (For emphasizing)
+        -->
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+          alt="A slice of lasagna on a plate.">
+          <figcaption>Cats <em>love</em> lasagna.</figcaption>
+        </figure>
+        <h3>Top 3 things cats hate:</h3>
+        <!--
+          ol : Orderred list
+          li : items
+          -> Numbers appear
+             whenever items are added with indentation
+             (Those numbers are incremented automatically
+              staring from 1)
+        -->
+        <ol>
+          <li>flea treatment</li>
+          <li>thunder</li>
+          <li>other cats</li>
+        </ol>
+        <!--
+          strong : bold font (For emphasizing)
+        -->
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+          alt="Five cats looking around a field.">
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Cat Form</h2>
+        <!--
+          form (Web Form): Collect information from users
+
+          attribute 'action' : Target URL
+          (Indicates where form data should be sent)
+          (All inputs will be transferred to that target URL)
+          
+          legend :  a caption for the content in the fieldset element
+          (* It gives users context about what they should enter into that part of the form)
+          
+          input : allows you several ways to collect data from a web form
+                  (* Self-closing tag : No closing tag)
+          
+          attribute 'id' : used to identify specific HTML elements
+                           (* Must be unique from all other id values)
+          
+          attribute 'type' : The type of 'input'
+
+          attribute 'required' : prevent a user from submitting your form
+                                 when required information is missing
+
+          attribute 'name' : assign a value to represent the data being submitted
+                             (* Kind of 'KEY')
+
+          attribute 'value' : unique value for representing the input data
+          (* The form data for the button is based on its 'name' and 'value' attributes)
+
+          attribute 'checked' : Being selected by default
+
+          fieldset : group related inputs and labels together in a web form
+                     (Block-level elements - appearing on a new line)
+
+          label : help associate the text for an 'input' element with the 'input' element itself
+                  (especially for assistive technologies like screen readers)
+
+          attribute 'for' : the same value as the input element's id attribute
+                            (Another way to associate an input element's text with the element itself)
+        -->
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+          <fieldset>
+            <legend>Is your cat an indoor or outder cat?</legend>
+            <!-- Type 1 Label & Input -->
+            <label>
+              <input id="indoor" type="radio"
+              name="indoor-outdoor" value="indoor" checked> Indoor
+            </label>
+            <label>
+              <input id="outdoor" type="radio"
+              name="indoor-outdoor" value="outdoor"> Outdoor
+            </label>
+            <!--
+              To prevent multiple radio buttons are selected at once,
+              same type of inputs should have the same 'name' attribute
+            -->
+            <!--
+              Form data for selected checkboxes are name / value attribute pairs. (Like radio buttons)
+              While the value attribute is optional, it's best practice to include it
+              with any checkboxes or radio buttons on the page **
+            -->
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <!-- Type 2 Label & Input -->
+            <!-- attribute 'name' is useful when there are multiple checkboxes-->
+            <input id="loving" type="checkbox"
+            name="personality" value="loving" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox"
+            name="personality" value="lazy" checked> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox"
+            name="personality" value="energetic" checked> <label for="energetic">Energetic</label>
+          </fieldset>
+          <!--
+            attribute 'placeholder' : Hint
+          -->
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
+          <!--input & button tags are inline elements, so new line is not applied-->
+        </form>
+      </section>
+    </main>
+    <!--Contents at the bottom-->
+    <footer>
+      <p>
+        No Copyright - <a href="htt;s://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
+  </body>
+</html>
